@@ -313,7 +313,7 @@ install(){
         cd ${cur_dir}
         tar zxf ${libsodium_file}.tar.gz
         cd ${libsodium_file}
-        ./configure --prefix=/usr --disable-dependency-tracking && make && make install
+        ./configure --disable-dependency-tracking --prefix=/usr && make && make install
         if [ $? -ne 0 ]; then
             echo -e "[${red}Error${plain}] libsodium install failed!"
             install_cleanup
